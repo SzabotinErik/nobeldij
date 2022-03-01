@@ -16,5 +16,13 @@ namespace nobeldij
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text==""|| textBox2.Text == ""|| textBox3.Text == ""|| textBox4.Text == "")
+            {
+                MessageBox.Show("Töltsön ki minden mezöt");
+            }
+        }
     }
 }
