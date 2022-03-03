@@ -49,7 +49,7 @@ namespace nobeldij
             catch (Exception error)
             {
 
-                MessageBox.Show($"hiba az állomány kiirásánál{error}");
+                MessageBox.Show($"hiba az állomány kiirásánál \n{error}");
             }
 
 
