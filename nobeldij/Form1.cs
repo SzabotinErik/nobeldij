@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace nobeldij
 {
@@ -31,6 +32,28 @@ namespace nobeldij
                 MessageBox.Show("hiba! az evszam nem megfelelo");
                 return;
             }
+
+            //10d
+            try
+            {
+                StreamWriter sw = new StreamWriter("uj_dijazott.txt");
+                sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
+                sw.WriteLine(textBox1.Text + ";" + textBox2.Text + ";" + textBox3.Text + ";" + textBox4.Text);
+                sw.Close();
+                MessageBox.Show("Sikeres mentés!");
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show($"hiba az állomány kiirásánál{error}");
+            }
+
+
+
         }
     }
 }
