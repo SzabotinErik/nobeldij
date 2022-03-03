@@ -22,6 +22,14 @@ namespace nobeldij
             if (textBox1.Text==""|| textBox2.Text == ""|| textBox3.Text == ""|| textBox4.Text == "")
             {
                 MessageBox.Show("Töltsön ki minden mezöt");
+                return;
+            }
+
+            //10.c szám e 1989 nél legyen nagyobb
+            if (!int.TryParse(textBox1.Text, out int év) ||  év < 1989)
+            {
+                MessageBox.Show("hiba! az evszam nem megfelelo");
+                return;
             }
         }
     }
